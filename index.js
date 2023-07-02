@@ -1,6 +1,8 @@
-const switches = document.querySelector('button');
+const switches = document.querySelectorAll('button');
 const body = document.body;
-switches.addEventListener('click', () => {
-    switches.className === 'day' ? switches.className = 'night' : switches.className = 'day';
-    switches.className === 'day' ? body.style.background = '#FFFFFF' : body.style.background = '#141414';
-})
+switches.forEach(item => {
+    item.addEventListener('click', () => {
+        item.className === 'day' ? item.className = 'night' : item.className = 'day';
+        item.className === 'day' ? body.style.background = '#FFFFFF' : body.style.background = '#141414';
+    })
+});

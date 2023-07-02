@@ -1,9 +1,14 @@
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100lvh;
     margin: 0;
+}
+
+body>div {
+    margin: 20px 0;
 }
 
 button {
@@ -35,11 +40,12 @@ body,
 .io::after,
 .cloud,
 .star,
+.icon,
 button {
     transition: all .5s ease-in-out;
 }
 
-.i {
+.switches-v1 .i {
     background: #FFE484;
     box-shadow: 0px 0px 10px 5px rgb(255 219 82 / .75);
     width: 40px;
@@ -48,7 +54,7 @@ button {
     border-radius: 50%;
 }
 
-.io {
+.switches-v1 .io {
     width: 40px;
     height: 40px;
     background: #87CEEB;
@@ -58,7 +64,7 @@ button {
     right: -100%;
 }
 
-.io::after {
+.switches-v1 .io::after {
     content: "";
     position: absolute;
     width: 110%;
@@ -78,13 +84,13 @@ button {
     background: #141852;
 }
 
-.day>.i {
+.switches-v1>.day>.i {
     top: 50%;
     left: 20px;
     transform: translate(0, -50%);
 }
 
-.night>.i {
+.switches-v1>.night>.i {
     top: 50%;
     left: calc(100% - 20px);
     transform: translate(-100%, -50%);
@@ -92,14 +98,14 @@ button {
     background: #FFF;
 }
 
-.night>.i>.io {
+.switches-v1>.night>.i>.io {
     background: #141852;
     top: -20%;
     right: -20%;
     box-shadow: inset 1px -1px 10px 0px #ffe484;
 }
 
-.night>.i>.io::after {
+.switches-v1>.night>.i>.io::after {
     background: #141852;
 }
 
@@ -114,7 +120,7 @@ button {
     height: 100%;
 }
 
-.night>.cloud {
+.switches-v1 .night>.cloud {
     opacity: 0;
 }
 
@@ -142,11 +148,11 @@ button {
     color: #FFFFFF;
 }
 
-.star {
+.switches-v1 .star {
     font-size: 0.5em;
 }
 
-.day>.star {
+.switches-v1 .day>.star {
     opacity: 0;
 }
 
@@ -178,4 +184,56 @@ button {
 .star>.fa-star:nth-child(5) {
     left: 85%;
     top: 23%;
+}
+
+.switches-v2 .icon {
+    font-size: 3em;
+    position: absolute;
+}
+
+.switches-v2 .fa-moon {
+    color: #FFFFFF;
+    right: 20px;
+    filter: drop-shadow(0 0 5px #ffe484);
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.switches-v2 .fa-circle {
+    color: #FFE484;
+    left: 20px;
+    filter: drop-shadow(0 0 5px #ffdc52);
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.switches-v2 .day>.fa-moon {
+    top: 0;
+    transform: translate(0, calc(-100% - 10px));
+}
+
+.switches-v2 .night>.fa-circle {
+    bottom: 0;
+    transform: translate(0, calc(100% + 10px));
+}
+
+.switches-v2 .star {
+    font-size: 0.5em;
+    width: 100%;
+    height: 100%;
+}
+
+.switches-v2 .day>.star {
+    opacity: 0;
+    transform: translate(0, -60%);
+}
+
+.switches-v2 .night>.cloud {
+    opacity: 0;
+    transform: translate(0, 50%);
+}
+
+.switches-v2 .star>.fa-star:nth-child(5) {
+    left: 85%;
+    top: 33%;
 }
